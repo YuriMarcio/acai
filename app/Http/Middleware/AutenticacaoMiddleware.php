@@ -5,8 +5,9 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Session;
 
-class LofAcessoMiddleware
+class AutenticacaoMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,6 +16,10 @@ class LofAcessoMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        if (Session::has('email') && Session::get('email') != '') {
+            return $next($request);
+        } else {
+            return redirect()->route('login.index', ['erro' => 'autenticacao']);
+        }
     }
 }

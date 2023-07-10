@@ -13,6 +13,8 @@
 </head>
 <body class="bg-gray-100">
     @yield('content')
+    <script src="{{ asset('/js/jquery.js') }}"></script>
+    <script src="{{ asset('/js/index.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="{{ asset('/js/carousel.js') }}"></script>
 </body>

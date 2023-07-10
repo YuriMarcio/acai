@@ -9,7 +9,7 @@ delivery
         <div class="bannerImg w-100  w-full h-100 max-h-96 absolute z-0">
             <img src="{{ asset('img/backacai.jpg') }}" class="w-full h-full max-h-80 object-cover object-center z-0" alt="Imagem">
         </div>
-        <section id="header" class=" text-sm w-full z-50 px-16 fixed bg-white h-16 flex items-center">
+        <section id="header" class="hidden text-sm w-full z-50 px-16 fixed bg-white h-16 md:flex items-center">
             <nav class="w-full flex justify-between items-center">
                 <div class="location flex justify-center items-center font-semibold gap-2">
                     <span class="material-symbols-outlined text-purple-400">where_to_vote</span>
@@ -17,26 +17,53 @@ delivery
                         <h1 class="font-medium text-xl text-zinc-700">Rosário</h1>
                     </div>
                 </div>
-                <ul class="w-full max-w-2xl flex justify-between items-center">
+                <ul class="w-full max-w-2xl md:flex justify-between items-center">
                     <li class="flex justify-center items-center gap-2 cursor-pointer">
                         <span class="material-symbols-outlined text-2xl">import_contacts</span>Cardapio
                     </li>
                     <li class="flex justify-center items-center gap-2 cursor-pointer">
                         <span class="material-symbols-outlined text-2xl">edit_note</span> Meus pedidos
                     </li>
-                    <li class="flex justify-center items-center gap-2 cursor-pointer">
+                    {{-- <li class="flex justify-center items-center gap-2 cursor-pointer">
                         <span class="material-symbols-outlined text-2xl">military_tech</span>Promoções e premios
-                    </li>
+                    </li> --}}
                     <li class="flex justify-center items-center gap-2 cursor-pointer">
                         <input type="button" class="bg-white hover:bg-purple-400 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow cursor-pointer" value="Acessar/Cadastrar">
                     </li>
                 </ul>
             </nav>
         </section>
-        <nav class="using px-16 grid grid-cols-4 gap-2 relative z-10 top-44">
-            <section class="status  col-span-3">
-                <div class="profile relative rounded-xl max-h-56 h-full flex gap-4 p-6  w-full bg-white mb-10">
-                    <img src="img/logo/logo.jpg" class="max-h-40 w-40 h-full rounded-full" alt="">
+        <section id="headermobile" class="text-sm w-full z-50 px-7 fixed bg-white h-16 flex items-center justify-between">
+            <div class="location flex justify-center items-center font-semibold gap-2">
+                <span class="material-symbols-outlined text-purple-400">where_to_vote</span>
+                <div class="locationName">
+                    <h1 class="font-medium text-xl text-zinc-700">Rosário</h1>
+                </div>
+            </div>
+            <nav class="flex justify-between items-center relative">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+                <ul class=" p-10 max-w-2xl absolute bg-white flex-col gap-y-2 -right-6 top-0 -mr-1 ">
+                    <li class="flex justify-center items-left gap-2 cursor-pointer">
+                        <span class="material-symbols-outlined text-2xl">import_contacts</span>Cardapio
+                    </li>
+                    <li class="flex justify-center items-center gap-2 cursor-pointer">
+                        <span class="material-symbols-outlined text-2xl">edit_note</span> Meus pedidos
+                    </li>
+                    {{-- <li class="flex justify-center items-center gap-2 cursor-pointer">
+                        <span class="material-symbols-outlined text-2xl">military_tech</span>Promoções e premios
+                    </li> --}}
+                    <li class="flex justify-center items-center gap-2 cursor-pointer">
+                        <input type="button" class="bg-white hover:bg-purple-400 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow cursor-pointer" value="Acessar/Cadastrar">
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        <nav class="using px-7 md:px-16 grid grid-cols-4 gap-2 relative z-10 top-44">
+            <section class="status col-span-4 md:col-span-3">
+                <div class="profile bg-red-400  rounded-xl max-h-56  flex gap-4 p-6  w-full bg-white mb-10">
+                    <img src="img/logo/logo.jpg" class="max-h-40 w-5/12 h-5/12 rounded-full" alt="">
                     <span class="status absolute top-10 left-52">
                         <div class="shoreName text-xl font-semibold">Açai Clube</div>
                         <div class="flex items-center gap-2 mt-2">
@@ -59,7 +86,6 @@ delivery
                             <div class="itens ">
                                     <div class="swiper w-full   destaqueDelivery">
                                         <div class="swiper-wrapper relative right-80 w-full">
-
                                           <div class="swiper-slide w-80 ">
                                             <div class="item w-full rounded bg-white p-3 flex flex-col flex-wrap-reverse">
                                                 <div class="text col-span-2">
@@ -83,10 +109,8 @@ delivery
                                                 </div>
                                             </div>
                                           </div>
-
-
                                         </div>
-                                      </div>
+                                    </div>
                             </div>
                             {{-- carrousel de itens mais pedidos --}}
                         </div>
@@ -95,25 +119,9 @@ delivery
                             <div class="itens grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
                                     <div class="text col-span-2">
-                                        <div class="titleProd text-base">titulo produto</div>
-                                        <div class="descProd mb-16 text-sm text-gray-400">alguma descrição do produto</div>
-                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1">R$ 29,00 <input type="checkbox" class="input" name="include" id="include"></div>
-                                    </div>
-                                    <div class="prodImg col-span-2 ">
-                                        <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- carrousel de itens mais pedidos --}}
-                        </div>
-                        <div class="emphasis flex flex-col gap-y-5 mb-10">
-                            <h1 class="font-medium text-xl text-zinc-700">Recheos</h1>
-                            <div class="itens grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
-                                    <div class="text col-span-2">
-                                        <div class="titleProd text-base">titulo produto</div>
-                                        <div class="descProd mb-16 text-sm text-gray-400">alguma descrição do produto</div>
-                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1">R$ 29,00 <input type="checkbox" class="input" name="include" id="include"></div>
+                                        <div class="titleProd text-base">AÇAI-300ML</div>
+                                        <div class="descProd mb-16 text-sm text-gray-400">AÇAI + 1 CREME + 2 ACOMPANHAMENTOS GRÁTIS</div>
+                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1">R$ 12,50 <input type="checkbox" class="input" name="include" id="include"></div>
                                     </div>
                                     <div class="prodImg col-span-2 ">
                                         <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
@@ -121,8 +129,18 @@ delivery
                                 </div>
                                 <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
                                     <div class="text col-span-2">
-                                        <div class="titleProd text-base">titulo produto</div>
-                                        <div class="descProd mb-16 text-sm text-gray-400">alguma descrição do produto</div>
+                                        <div class="titleProd text-base">AÇAI-400ML</div>
+                                        <div class="descProd mb-16 text-sm text-gray-400">AÇAI + 1 CREME + 3 ACOMPANHAMENTOS GRÁTIS</div>
+                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1">R$ 14,50 <input type="checkbox" class="input" name="include" id="include"></div>
+                                    </div>
+                                    <div class="prodImg col-span-2 ">
+                                        <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
+                                    </div>
+                                </div>
+                                <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
+                                    <div class="text col-span-2">
+                                        <div class="titleProd text-base">AÇAI-500ML</div>
+                                        <div class="descProd mb-16 text-sm text-gray-400">AÇAI + 1 CREME + 4 ACOMPANHAMENTOS GRÁTIS</div>
                                         <div class="valueProd text-sm text-green-800 flex justify-between px-1">R$ 29,00 <input type="checkbox" class="input" name="include" id="include"></div>
                                     </div>
                                     <div class="prodImg col-span-2 ">
@@ -134,13 +152,59 @@ delivery
                             {{-- carrousel de itens mais pedidos --}}
                         </div>
                         <div class="emphasis flex flex-col gap-y-5 mb-10">
-                            <h1 class="font-medium text-xl text-zinc-700">Caldas </h1>
+                            <h1 class="font-medium text-xl text-zinc-700">CREMES</h1>
                             <div class="itens grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
                                     <div class="text col-span-2">
-                                        <div class="titleProd text-base">titulo produto</div>
+                                        <div class="titleProd text-xl">CREME DE CUPUAÇU</div>
                                         <div class="descProd mb-16 text-sm text-gray-400">alguma descrição do produto</div>
-                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1">R$ 29,00 <input type="checkbox" class="input" name="include" id="include"></div>
+                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1"> <input type="checkbox" class="input" name="include" id="include"></div>
+                                    </div>
+                                    <div class="prodImg col-span-2 ">
+                                        <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
+                                    </div>
+                                </div>
+                                <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
+                                    <div class="text col-span-2">
+                                        <div class="titleProd text-xl">CREME DE LEITE NINHO</div>
+                                        <div class="descProd mb-16 text-sm text-gray-400">alguma descrição do produto</div>
+                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1"> <input type="checkbox" class="input" name="include" id="include"></div>
+                                    </div>
+                                    <div class="prodImg col-span-2 ">
+                                        <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
+                                    </div>
+                                </div>
+                                <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
+                                    <div class="text col-span-2">
+                                        <div class="titleProd text-xl">CREME DE OREO</div>
+                                        <div class="descProd mb-16 text-sm text-gray-400">alguma descrição do produto</div>
+                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1"> <input type="checkbox" class="input" name="include" id="include"></div>
+                                    </div>
+                                    <div class="prodImg col-span-2 ">
+                                        <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
+                                    </div>
+                                </div>
+                                <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
+                                    <div class="text col-span-2">
+                                        <div class="titleProd text-xl">CREME DE NUTELLA</div>
+                                        <div class="descProd mb-16 text-sm text-gray-400">alguma descrição do produto</div>
+                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1"> <input type="checkbox" class="input" name="include" id="include"></div>
+                                    </div>
+                                    <div class="prodImg col-span-2 ">
+                                        <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- carrousel de itens mais pedidos --}}
+                        </div>
+                        <div class="emphasis flex flex-col gap-y-5 mb-10">
+                            <h1 class="font-medium text-xl text-zinc-700">ACOMPANHAMENTOS</h1>
+                            <div class="itens grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
+                                    <div class="text col-span-2">
+                                        <div class="titleProd text-base">M&M'S</div>
+                                        <div class="descProd mb-16 text-sm text-gray-400">alguma descrição do produto</div>
+                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1"><input type="checkbox" class="input" name="include" id="include"></div>
                                     </div>
                                     <div class="prodImg col-span-2 ">
                                         <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
@@ -169,15 +233,15 @@ delivery
 
                 </section>
             </section>
-            <div class="cart w-full h-full max-h-80 flex flex-col gap-y-4 max-w-xs fixed right-5">
-                {{-- caso o carrinho esteja vazio apresente --}}
+            {{-- <div class="cart w-full h-full max-h-80 flex flex-col gap-y-4 max-w-xs fixed right-5">
+                caso o carrinho esteja vazio apresente
                 <div class="prodsCart  bg-white p-2 rounded-lg w-full h-full max-h-96">
-                    {{-- quando não tiver produtos no carrinho --}}
-                    {{-- <div class="empytCart w-full h-44 flex flex-col justify-center items-center text-xl gap-y-3 text-neutral-500 invisible">
+                    quando não tiver produtos no carrinho
+                    <div class="empytCart w-full h-44 flex flex-col justify-center items-center text-xl gap-y-3 text-neutral-500 invisible">
                         <span class="material-symbols-outlined text-3xl ">production_quantity_limits</span>
                         <span>Carrinho Vazio!</span>
-                    </div> --}}
-                    {{-- -------------------------------- --}}
+                    </div>
+                    --------------------------------
                     <div class="headCart w-full flex justify-between items-center border-b-2 border-b-zinc-600/25 shadow-sm py-2">
                         <div class="flex justify-center items-center gap-x-3 text-lg ">
                             <span class="material-symbols-outlined text-lg ">production_quantity_limits</span>
@@ -218,7 +282,7 @@ delivery
                     </div>
                     <button class="requestProd p-2 flex justify-center items-center bg-green-600 w-full rounded" value="Fazer Pedido">Fazer Pedido</button>
                 </div>
-            </div>
+            </div> --}}
 
         </nav>
     </div>

@@ -17,7 +17,7 @@
                             <h1 class="block font-bold text-4xl md:hidden" >Login</h1>
                         </div>
                         <span class="font-semibold">Email/Cpf :</span>
-                        <input name="email" class="h-24  mb-12 rounded-md bg-gray-100 p-4 md:h-14 md:text-lg" type="text">
+                        <input name="email"  class="h-24  mb-12 rounded-md bg-gray-100 p-4 md:h-14 md:text-lg" type="text" placeholder="seu email aqui">
                         <span class="font-semibold">Senha :</span>
                         <input name="password" class="h-24  mb-12 rounded-md bg-gray-100 p-4 md:h-14 md:text-lg" type="password">
                         <div class="remember text-2xl mb-6">
@@ -32,16 +32,23 @@
             </section>
         </div>
         <div class="log w-full h-full  justify-center items-center md:flex hidden md:block">
-            <form action="{{route('login.store')}}" method="POST" class="bg-white w-4/6  rounded-md flex flex-col justify-center gap-4 gap-y-8  p-4">
+            <form action="{{route('login.store')}}" method="post" class="bg-white w-4/6  rounded-md flex flex-col justify-center gap-4 gap-y-8  p-4">
                 @csrf
-                @error('logerror')
-                    <span>{{ $message }}</span>
-                @enderror
                 <div class="w-full flex justify-center items-center">
                     <img src="{{ asset('img/logo/logo.jpg ') }}" class="max-h-20 w-20 h-full rounded-full" alt="">
                 </div>
-                <input name="email" class="h-14 rounded-md p-4 text-lg bg-gray-100" type="text">
-                <input name="password" class="h-14 rounded-md p-4 text-lg bg-gray-100" type="password">
+                
+                @error('error')
+                    <span>{{$message}}</span>
+                @enderror
+                <input name="email" value="{{old('email')}}" class="h-14 rounded-md p-4 text-lg bg-gray-100" type="text" placeholder="Email">
+                    @error('email')
+                        <span>{{ $message }}</span>
+                    @enderror
+                <input name="password" value="{{old('password')}}" class="h-14 rounded-md p-4 text-lg bg-gray-100" type="password" placeholder="senha">
+                    @error('password')
+                        <span>{{ $message }}</span>
+                    @enderror
                 <div class="remember">
                     <input type="checkbox" class="default:ring-2" name="remember" id=""> <span>lembrar de mim</span>
                 </div>

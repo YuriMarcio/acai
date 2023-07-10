@@ -3,7 +3,8 @@
 use App\Http\Controllers\DeliveryController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Middleware\LofAcessoMiddleware;
+use App\Http\Middleware\logAcessoMiddleware;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +20,7 @@ Route::get('/', [DeliveryController::class, 'delivery']);
 
 Route::prefix('dashboard')->controller(LoginController::class)->group(function () {
     Route::get('/login', 'index')->name('login.index');
-    Route::post('/login', 'store')->name('login.store');
+    Route::middleware('autenticacao')->post('/login', 'store')->name('login.store');
     Route::get('/logged', 'logged')->name('login.logged');
     Route::get('/logout', 'destroy')->name('login.destroy');
 });
