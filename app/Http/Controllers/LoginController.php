@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Cookie;
+
 
 class LoginController extends Controller
 {
@@ -16,6 +18,7 @@ class LoginController extends Controller
         return view('dashboard.login');
     }
     public function store(Request $request){
+        session()->flush();
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
@@ -25,6 +28,7 @@ class LoginController extends Controller
             'password.required' => 'o campo Senha é obirgatorio',
         ]);
         $credentials = $request->only('email','password');
+        // $remember = $request->has('remember');
         $authenticated = DB::table('Internal_Users')
         ->where('email', $credentials['email'])
         ->where('password', $credentials['password'])->first();
@@ -32,18 +36,26 @@ class LoginController extends Controller
         if(!$authenticated){
             return redirect()->route('login.index')->withErrors(['error'=>'email ou senha invalida']);
         }else{
-            Session::put('nome', $authenticated->nome);
-            Session::put('email', $authenticated->email);
-            Session::put('cargo', $authenticated->cargo);
-            Session::put('id', $authenticated->id);
-            return redirect()->route('login.logged')->with('success','logged in');
+            session(['nome' => $authenticated->nome]);
+            session(['email' => $authenticated->email]);
+            session(['cargo' => $authenticated->cargo]);
+            session(['id' => $authenticated->id]);
+
+            //CASO APLIQUE A LOGICA DE COOKIE MANUAL COMEÇAR POR AQUI
+            // if($remember){
+            //     $cookie = cookie('login_credentials', json_encode($credentials), 60*24*12);
+            //     return redirect()->route('login.logged')->withCookie($cookie);
+            // }
+
+            return redirect()->route('login.logged');
         }
     }
     public function destroy(){
-        session_destroy();
+        session()->flush();
         return redirect()->route('login.index');
     }
     public function logged(){
+        $email = session()->get('email');
         return view('dashboard.logged');
     }
 }

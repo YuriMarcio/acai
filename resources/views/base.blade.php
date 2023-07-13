@@ -8,14 +8,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     {{-- static archives --}}
-    <link rel="stylesheet" href="{{ asset('/css/output.css') }}">
+    @vite(['resources/css/app.css','resources/js/app.js','resources/js/jquery.js','resources/js/index.js','resources/js/carousel.js'])
     {{-- script --}}
 </head>
 <body class="bg-gray-100">
     @yield('content')
-    <script src="{{ asset('/js/jquery.js') }}"></script>
-    <script src="{{ asset('/js/index.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="{{ asset('/js/carousel.js') }}"></script>
 </body>
 </html>

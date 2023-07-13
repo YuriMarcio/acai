@@ -7,8 +7,8 @@
         <div class='background_log w-full h-full relative  object-cover'>
             <img src="{{ asset('./img/backgroundlogin.jpg') }}" alt="" class="w-full h-full object-cover object-center hidden md:block">
             <section class="loginMobile block md:hidden">
-                <img src="{{ asset('./img/backgroundlogin.jpg') }}" alt="" class="w-full object-cover object-center max-h-[29rem] ">
-                <div class="log md:hidden absolute bottom-0 max-h-[904px] rounded-tl-[200px] pt-10 bg-white w-full h-full flex justify-center items-center ">
+                <img src="{{ asset('./img/backgroundlogin.jpg') }}" alt="" class="w-full object-cover object-center max-h-[29rem] absolute">
+                <div class="log md:hidden absolute bottom-0 max-h-[300px] rounded-tl-[200px] pt-10 bg-white w-full h-full flex justify-center items-center ">
                     <form action={{ route('login.store') }}  method="post" class="w-full h-full text-3xl md:bg-white md:w-4/6 md:rounded-md flex flex-col justify-center gap-4  md:gap-y-8  p-4">
                         @csrf
 
@@ -31,13 +31,13 @@
                 </div>
             </section>
         </div>
-        <div class="log w-full h-full  justify-center items-center md:flex hidden md:block">
+        <div class="logdesk w-full h-full  justify-center items-center md:flex hidden">
             <form action="{{route('login.store')}}" method="post" class="bg-white w-4/6  rounded-md flex flex-col justify-center gap-4 gap-y-8  p-4">
                 @csrf
                 <div class="w-full flex justify-center items-center">
                     <img src="{{ asset('img/logo/logo.jpg ') }}" class="max-h-20 w-20 h-full rounded-full" alt="">
                 </div>
-                
+
                 @error('error')
                     <span>{{$message}}</span>
                 @enderror

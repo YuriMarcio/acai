@@ -12,11 +12,16 @@ class AutenticacaoMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     **
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Session::has('email') && Session::get('email') != '') {
+        $email = Session::get('email');
+
+        if ($email) {
             return $next($request);
         } else {
             return redirect()->route('login.index', ['erro' => 'autenticacao']);

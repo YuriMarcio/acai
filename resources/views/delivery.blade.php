@@ -41,34 +41,36 @@ delivery
                 </div>
             </div>
             <nav class="flex justify-between items-center relative">
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined menu">
                     menu
                 </span>
-                <ul class=" p-10 max-w-2xl absolute bg-white flex-col gap-y-2 -right-6 top-0 -mr-1 ">
-                    <li class="flex justify-center items-left gap-2 cursor-pointer">
+                <ul id="dropmenu" class=" hidden rounded px-3 py-6 max-w-2xl absolute bg-white flex-col gap-10 -right-6 -top-6  -mr-1 ">
+                    <li class="flex justify-left items-left gap-2 cursor-pointer mb-2">
                         <span class="material-symbols-outlined text-2xl">import_contacts</span>Cardapio
                     </li>
-                    <li class="flex justify-center items-center gap-2 cursor-pointer">
+                    <li class="flex justify-left items-center gap-2 cursor-pointer mb-2">
                         <span class="material-symbols-outlined text-2xl">edit_note</span> Meus pedidos
                     </li>
-                    {{-- <li class="flex justify-center items-center gap-2 cursor-pointer">
+                    {{-- <li class="flex justify-left items-center gap-2 cursor-pointer mb-2">
                         <span class="material-symbols-outlined text-2xl">military_tech</span>Promoções e premios
                     </li> --}}
-                    <li class="flex justify-center items-center gap-2 cursor-pointer">
-                        <input type="button" class="bg-white hover:bg-purple-400 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow cursor-pointer" value="Acessar/Cadastrar">
+                    <li class="flex justify-left items-center gap-2 cursor-pointer mb-2">
+                        <input type="button" class="bg-purple-400 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow cursor-pointer" value="Acessar/Cadastrar">
                     </li>
                 </ul>
             </nav>
         </section>
         <nav class="using px-7 md:px-16 grid grid-cols-4 gap-2 relative z-10 top-44">
             <section class="status col-span-4 md:col-span-3">
-                <div class="profile bg-red-400  rounded-xl max-h-56  flex gap-4 p-6  w-full bg-white mb-10">
+                <div class="profile rounded-xl max-h-56 flex items-center gap-4 p-6  w-full bg-white mb-10">
                     <img src="img/logo/logo.jpg" class="max-h-40 w-5/12 h-5/12 rounded-full" alt="">
-                    <span class="status absolute top-10 left-52">
+                    <span class="status top-10 left-52">
                         <div class="shoreName text-xl font-semibold">Açai Clube</div>
-                        <div class="flex items-center gap-2 mt-2">
-                            <div class="bol w-3.5 h-3.5 rounded-2xl bg-purple-400"></div>
-                            <h2 class="text-purple-400 text-base">Funcionando -</h2>
+                        <div class=" md:flex md:items-center gap-2 mt-2">
+                            <div class="flex items-center gap-x-2">
+                                <div class="bol w-3.5 h-3.5 rounded-2xl bg-purple-400"></div>
+                                <h2 class="text-purple-400 text-base">Funcionando :</h2>
+                            </div>
                             <div class="openHours">Fecha às 23h45</div>
                         </div>
                     </span>
@@ -81,7 +83,7 @@ delivery
                         <input type="search" class=" w-full p-3 outline-none border-none" name="busca" placeholder="Buscar produtos ..." id="busca">
                     </div>
                     <div class="Ingredients">
-                        <div class="emphasis flex flex-col gap-y-5 mb-10 mt-10">
+                        {{-- <div class="emphasis flex flex-col gap-y-5 mb-10 mt-10">
                             <h1 class="font-medium text-xl text-zinc-700">Destaques </h1>
                             <div class="itens ">
                                     <div class="swiper w-full   destaqueDelivery">
@@ -112,16 +114,16 @@ delivery
                                         </div>
                                     </div>
                             </div>
-                            {{-- carrousel de itens mais pedidos --}}
-                        </div>
+                            carrousel de itens mais pedidos
+                        </div> --}}
                         <div class="emphasis flex flex-col gap-y-5 mb-10">
                             <h1 class="font-medium text-xl text-zinc-700">Copos </h1>
-                            <div class="itens grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
+                            <div class="itens grid grid-cols-1 md:grid-cols-2 gap-4 ">
+                                <div class="item w-full rounded bg-white p-5 grid-flow-col md:grid grid-cols-4 grid-rows-1">
                                     <div class="text col-span-2">
                                         <div class="titleProd text-base">AÇAI-300ML</div>
-                                        <div class="descProd mb-16 text-sm text-gray-400">AÇAI + 1 CREME + 2 ACOMPANHAMENTOS GRÁTIS</div>
-                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1">R$ 12,50 <input type="checkbox" class="input" name="include" id="include"></div>
+                                        <div class="descProd md:mb-16 text-sm text-gray-400">AÇAI + 1 CREME + 2 ACOMPANHAMENTOS GRÁTIS</div>
+                                        <div class="valueProd text-sm text-green-800 flex justify-between md:px-1">R$ 12,50 <input type="checkbox" class="input" name="include" id="include"></div>
                                     </div>
                                     <div class="prodImg col-span-2 ">
                                         <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
