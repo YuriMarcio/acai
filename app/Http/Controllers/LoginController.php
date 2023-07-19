@@ -18,7 +18,6 @@ class LoginController extends Controller
         return view('dashboard.login');
     }
     public function store(Request $request){
-        session()->flush();
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
@@ -47,7 +46,7 @@ class LoginController extends Controller
             //     return redirect()->route('login.logged')->withCookie($cookie);
             // }
 
-            return redirect()->route('login.logged');
+            return redirect()->route('dash.pdv');
         }
     }
     public function destroy(){

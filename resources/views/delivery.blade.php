@@ -5,11 +5,29 @@ delivery
 @endsection
 
 @section('content')
+    <ul id="menuMobile" class="hidden rounded max-w-2xl p-4 z-50 absolute justify-center items-center top-0 right-0 bg-white flex-col gap-10">
+        <li class="flex justify-left items-left gap-2 cursor-pointer mb-2">
+            <span class="material-symbols-outlined text-2xl">import_contacts</span>Cardapio
+        </li>
+        <li class="flex justify-left items-center gap-2 cursor-pointer mb-2">
+            <span class="material-symbols-outlined text-2xl">edit_note</span> Meus pedidos
+        </li>
+        {{-- <li class="flex justify-left items-center gap-2 cursor-pointer mb-2">
+            <span class="material-symbols-outlined text-2xl">military_tech</span>Promoções e premios
+        </li> --}}
+        <li class="flex justify-left items-center gap-2 cursor-pointer mb-2">
+            <input type="button" class="bg-purple-400 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow cursor-pointer" value="Acessar/Cadastrar">
+        </li>
+    </ul>
+    <span id="iconMobile" class="material-symbols-outlined menu fixed z-40 right-7 top-5">
+        menu
+    </span>
+
     <div class="banner w-100 relative">
         <div class="bannerImg w-100  w-full h-100 max-h-96 absolute z-0">
             <img src="{{ asset('img/backacai.jpg') }}" class="w-full h-full max-h-80 object-cover object-center z-0" alt="Imagem">
         </div>
-        <section id="header" class="hidden text-sm w-full z-50 px-16 fixed bg-white h-16 md:flex items-center">
+        <section id="header" class="hidden text-sm w-full z-30 px-16 fixed bg-white h-16 md:flex items-center">
             <nav class="w-full flex justify-between items-center">
                 <div class="location flex justify-center items-center font-semibold gap-2">
                     <span class="material-symbols-outlined text-purple-400">where_to_vote</span>
@@ -33,37 +51,18 @@ delivery
                 </ul>
             </nav>
         </section>
-        <section id="headermobile" class="text-sm w-full z-50 px-7 fixed bg-white h-16 flex items-center justify-between">
+        <section id="headermobile" class=" md:hidden text-sm w-full  px-7 fixed bg-white h-16 flex items-center justify-between">
             <div class="location flex justify-center items-center font-semibold gap-2">
                 <span class="material-symbols-outlined text-purple-400">where_to_vote</span>
                 <div class="locationName">
                     <h1 class="font-medium text-xl text-zinc-700">Rosário</h1>
                 </div>
             </div>
-            <nav class="flex justify-between items-center relative">
-                <span class="material-symbols-outlined menu">
-                    menu
-                </span>
-                <ul id="dropmenu" class=" hidden rounded px-3 py-6 max-w-2xl absolute bg-white flex-col gap-10 -right-6 -top-6  -mr-1 ">
-                    <li class="flex justify-left items-left gap-2 cursor-pointer mb-2">
-                        <span class="material-symbols-outlined text-2xl">import_contacts</span>Cardapio
-                    </li>
-                    <li class="flex justify-left items-center gap-2 cursor-pointer mb-2">
-                        <span class="material-symbols-outlined text-2xl">edit_note</span> Meus pedidos
-                    </li>
-                    {{-- <li class="flex justify-left items-center gap-2 cursor-pointer mb-2">
-                        <span class="material-symbols-outlined text-2xl">military_tech</span>Promoções e premios
-                    </li> --}}
-                    <li class="flex justify-left items-center gap-2 cursor-pointer mb-2">
-                        <input type="button" class="bg-purple-400 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow cursor-pointer" value="Acessar/Cadastrar">
-                    </li>
-                </ul>
-            </nav>
         </section>
         <nav class="using px-7 md:px-16 grid grid-cols-4 gap-2 relative z-10 top-44">
             <section class="status col-span-4 md:col-span-3">
                 <div class="profile rounded-xl max-h-56 flex items-center gap-4 p-6  w-full bg-white mb-10">
-                    <img src="img/logo/logo.jpg" class="max-h-40 w-5/12 h-5/12 rounded-full" alt="">
+                    <img src="img/logo/logo.jpg" class="max-h-40 w-3/12 md:w-2/12 h-5/12 rounded-full" alt="">
                     <span class="status top-10 left-52">
                         <div class="shoreName text-xl font-semibold">Açai Clube</div>
                         <div class=" md:flex md:items-center gap-2 mt-2">
@@ -118,7 +117,7 @@ delivery
                         </div> --}}
                         <div class="emphasis flex flex-col gap-y-5 mb-10">
                             <h1 class="font-medium text-xl text-zinc-700">Copos </h1>
-                            <div class="itens grid grid-cols-1 md:grid-cols-2 gap-4 ">
+                            <div class="itens grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="item w-full rounded bg-white p-5 grid-flow-col md:grid grid-cols-4 grid-rows-1">
                                     <div class="text col-span-2">
                                         <div class="titleProd text-base">AÇAI-300ML</div>

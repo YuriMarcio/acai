@@ -7,11 +7,12 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     {{-- static archives --}}
-    @vite(['resources/css/app.css','resources/js/app.js','resources/js/jquery.js','resources/js/index.js','resources/js/carousel.js'])
+    @vite(['resources/css/app.css','resources/js/app.js','resources/js/jquery.js','resources/js/index.js','resources/js/carousel.js','resources/js/delivery.js',])
     {{-- script --}}
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-roboto">
     @yield('content')
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </body>
