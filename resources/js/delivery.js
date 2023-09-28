@@ -1,9 +1,11 @@
-$(function() {
-    $('#iconMobile').click(function(){
-        $("#menuMobile").slideToggle();
+$(function () {
+    $("#menu").on('click',function(){
+        $("#infoleft").fadeIn();
+        if($("#infoleft").is(":visible")){
+            $(document).on("click","#closeinfoleft",function(){
+                $("#infoleft").fadeOut();
+            })
+        }
     })
-    $('.banner').click(function(){
-        $("#menuMobile").fadeOut();
-    })
-   
+
 });

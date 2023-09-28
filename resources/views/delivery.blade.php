@@ -1,293 +1,476 @@
 @extends('base')
-
 @section('title')
 delivery
 @endsection
-
 @section('content')
-    <ul id="menuMobile" class="hidden rounded max-w-2xl p-4 z-50 absolute justify-center items-center top-0 right-0 bg-white flex-col gap-10">
-        <li class="flex justify-left items-left gap-2 cursor-pointer mb-2">
-            <span class="material-symbols-outlined text-2xl">import_contacts</span>Cardapio
-        </li>
-        <li class="flex justify-left items-center gap-2 cursor-pointer mb-2">
-            <span class="material-symbols-outlined text-2xl">edit_note</span> Meus pedidos
-        </li>
-        {{-- <li class="flex justify-left items-center gap-2 cursor-pointer mb-2">
-            <span class="material-symbols-outlined text-2xl">military_tech</span>Promoções e premios
-        </li> --}}
-        <li class="flex justify-left items-center gap-2 cursor-pointer mb-2">
-            <input type="button" class="bg-purple-400 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow cursor-pointer" value="Acessar/Cadastrar">
-        </li>
-    </ul>
-    <span id="iconMobile" class="material-symbols-outlined menu fixed z-40 right-7 top-5">
-        menu
-    </span>
+<section class="delivery p-4 ">
+    <section class="mobile lg:hidden flex flex-col gap-6">
+        <header class="w-full flex justify-between itens-center ">
+            <div class="flex justify-center items-center gap-x-3 ">
+                <img src="{{ asset('img/icon/location.svg') }}" alt="localização">
+                <select id="underline_select" class="block w-11/12 py-2.5 px-0 text-lg text-gray-500 bg-transparent border-0  appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                    <option selected>Selecione</option>
+                    <option value="Rosario">Rosario</option>
+                    <option value="bacabeira">Bacabeira</option>
+                </select>
+            </div>
+            <button type="button" class="text-white bg-fuchsia-700 hover:bg-fuchsia-600 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 ">Entrar/Registrar</button>
+        </header>
 
-    <div class="banner w-100 relative">
-        <div class="bannerImg w-100  w-full h-100 max-h-96 absolute z-0">
-            <img src="{{ asset('img/backacai.jpg') }}" class="w-full h-full max-h-80 object-cover object-center z-0" alt="Imagem">
-        </div>
-        <section id="header" class="hidden text-sm w-full z-30 px-16 fixed bg-white h-16 md:flex items-center">
-            <nav class="w-full flex justify-between items-center">
-                <div class="location flex justify-center items-center font-semibold gap-2">
-                    <span class="material-symbols-outlined text-purple-400">where_to_vote</span>
-                    <div class="locationName">
-                        <h1 class="font-medium text-xl text-zinc-700">Rosário</h1>
+        <section class="banner w-full px-1 flex justify-center iten-center">
+            <img src="{{ asset('img/banner/banner.png') }}" class="w-full" alt="">
+        </section>
+
+        <form id="search">
+            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                    </svg>
+                </div>
+                <input type="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required>
+                <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-fuchsia-700 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 ">Search</button>
+            </div>
+        </form>
+
+        <section id="itens" class="flex flex-col gap-4 mb-28">
+             <h3 class="text-2xl font-bold">Copos</h3>
+             <div class="categories w-full relative overflow-x-auto flex gap-x-5 justify-start items-center scrollbar-hide ">
+                <button class="border-2 min-w-[95px] w-full selection:bg-fuchsia-700 selection:text-white border-fuchsia-700 flex justify-center gap-2 p-2 rounded-xl">
+                    <img src="{{ asset('img/icon/acai.svg') }}" class  alt="localização">
+                    <span>açai</span>
+                </button>
+
+                <button class="border-2 min-w-[95px] w-full selection:bg-fuchsia-700 selection:text-white border-fuchsia-700 flex justify-center gap-2 p-2 rounded-xl">
+                    <img src="{{ asset('img/icon/calda.svg') }}" class  alt="localização">
+                    <span>calda</span>
+                </button>
+
+                <button class="border-2 min-w-[95px] w-full selection:bg-fuchsia-700 selection:text-white border-fuchsia-700 flex justify-center gap-2 p-2 rounded-xl">
+                    <img src="{{ asset('img/icon/morango.svg') }}" class  alt="localização">
+                    <span>fruta</span>
+                </button>
+
+                <button class="border-2 min-w-[95px] w-full selection:bg-fuchsia-700 selection:text-white border-fuchsia-700 flex justify-center gap-2 p-2 rounded-xl">
+                    <img src="{{ asset('img/icon/icecream.svg') }}" class  alt="localização">
+                    <span>sorvete</span>
+                </button>
+                <button class="border-2 min-w-[95px] w-full selection:bg-fuchsia-700 selection:text-white border-fuchsia-700 flex justify-center gap-2 p-2 rounded-xl">
+                    <img src="{{ asset('img/icon/candy.svg') }}" class  alt="localização">
+                    <span>doces</span>
+                </button>
+             </div>
+             <section class="itens grid grid-cols-2 sm:grid-cols-3  gap-3">
+                <div class="item rounded-xl p-3 shadow-xl flex flex-col gap-2 justify-center items-start text-lg ">
+                    <img src="{{ asset('img/acaipequeno.png') }}" class="w-full max-w-xs"  alt="localização">
+                    <h2 class="text-xl font-bold" >Açai 330ml</h2>
+                    <p class="text-slate-500/75">Açai de 330 ml natural sem adição de corante</p>
+                    <div class="add w-full flex justify-between items-center text-fuchsia-700">
+                        <p class="text-xl">R$ 22,00</p>
+                        <button class="w-11 h-11  bg-fuchsia-700 flex justify-center items-center rounded-full text-white">
+                            <span class="material-symbols-outlined">add</span>
+                        </button>
                     </div>
                 </div>
-                <ul class="w-full max-w-2xl md:flex justify-between items-center">
-                    <li class="flex justify-center items-center gap-2 cursor-pointer">
-                        <span class="material-symbols-outlined text-2xl">import_contacts</span>Cardapio
-                    </li>
-                    <li class="flex justify-center items-center gap-2 cursor-pointer">
-                        <span class="material-symbols-outlined text-2xl">edit_note</span> Meus pedidos
-                    </li>
-                    {{-- <li class="flex justify-center items-center gap-2 cursor-pointer">
-                        <span class="material-symbols-outlined text-2xl">military_tech</span>Promoções e premios
-                    </li> --}}
-                    <li class="flex justify-center items-center gap-2 cursor-pointer">
-                        <input type="button" class="bg-white hover:bg-purple-400 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow cursor-pointer" value="Acessar/Cadastrar">
-                    </li>
-                </ul>
-            </nav>
+
+                <div class="item rounded-xl p-3 shadow-xl flex flex-col gap-2 justify-center items-start text-lg ">
+                    <img src="{{ asset('img/acaipequeno.png') }}" class="w-full max-w-xs"  alt="localização">
+                    <h2 class="text-xl font-bold" >Açai 330ml</h2>
+                    <p class="text-slate-500/75">Açai de 330 ml natural sem adição de corante</p>
+                    <div class="add w-full flex justify-between items-center text-fuchsia-700">
+                        <p class="text-xl">R$ 22,00</p>
+                        <button class="w-11 h-11  bg-fuchsia-700 flex justify-center items-center rounded-full text-white">
+                            <span class="material-symbols-outlined">add</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item rounded-xl p-3 shadow-xl flex flex-col gap-2 justify-center items-start text-lg ">
+                    <img src="{{ asset('img/acaipequeno.png') }}" class="w-full max-w-xs"  alt="localização">
+                    <h2 class="text-xl font-bold" >Açai 330ml</h2>
+                    <p class="text-slate-500/75">Açai de 330 ml natural sem adição de corante</p>
+                    <div class="add w-full flex justify-between items-center text-fuchsia-700">
+                        <p class="text-xl">R$ 22,00</p>
+                        <button class="w-11 h-11  bg-fuchsia-700 flex justify-center items-center rounded-full text-white">
+                            <span class="material-symbols-outlined">add</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item rounded-xl p-3 shadow-xl flex flex-col gap-2 justify-center items-start text-lg ">
+                    <img src="{{ asset('img/acaipequeno.png') }}" class="w-full max-w-xs"  alt="localização">
+                    <h2 class="text-xl font-bold" >Açai 330ml</h2>
+                    <p class="text-slate-500/75">Açai de 330 ml natural sem adição de corante</p>
+                    <div class="add w-full flex justify-between items-center text-fuchsia-700">
+                        <p class="text-xl">R$ 22,00</p>
+                        <button class="w-11 h-11  bg-fuchsia-700 flex justify-center items-center rounded-full text-white">
+                            <span class="material-symbols-outlined">add</span>
+                        </button>
+                    </div>
+                </div>
+             </section>
         </section>
-        <section id="headermobile" class=" md:hidden text-sm w-full  px-7 fixed bg-white h-16 flex items-center justify-between">
-            <div class="location flex justify-center items-center font-semibold gap-2">
-                <span class="material-symbols-outlined text-purple-400">where_to_vote</span>
-                <div class="locationName">
-                    <h1 class="font-medium text-xl text-zinc-700">Rosário</h1>
+
+        <footer class="w-full bg-white fixed top-[89%] left-0 p-6 px-11 text-fuchsia-700 flex justify-between items-center rounded-t-3xl shadow-2xl">
+            <button class="hover:bg-fuchsia-400 rounded-3xl" ><span class="material-symbols-outlined text-5xl">home</span></button>
+            <button class="hover:bg-fuchsia-400 rounded-3xl" ><span class="material-symbols-outlined text-5xl">local_mall</span></button>
+            <button class="hover:bg-fuchsia-400 rounded-3xl" ><span class="material-symbols-outlined text-5xl">account_circle</span></button>
+        </footer>
+    </section>
+
+    <section class="desktop hidden lg:grid grid-cols-10 ">
+        <section class="body col-span-7 flex flex-col gap-5 ">
+            <header class="flex shadow-2xl relative -ml-1 px-4 w-full rounded-2xl left-0 ">
+            <button id="menu"><span class="material-symbols-outlined text-4xl">menu</span></button>
+                <form id="search" class="w-full p-2">
+                    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                            </svg>
+                        </div>
+                        <input type="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required>
+                        <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-fuchsia-700 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 ">Search</button>
+                    </div>
+                </form>
+            </header>
+            <div id="banner w-full flex justify-center items-center">
+                <div class="rounded-2xl w-full flex justify-center items-center ">
+                    <img  src="{{ asset('img/tijela.jpg') }}" class="object-cover rounded-3xl h-64 w-11/12 border-2 border-fuchsia-700" alt="">
                 </div>
             </div>
+            <div class="categories w-full relative overflow-x-auto flex gap-x-5 justify-start items-center scrollbar-hide px-8">
+                <button class="border-2 min-w-[95px] w-full selection:bg-fuchsia-700 selection:text-white border-fuchsia-700 flex justify-center gap-2 p-2 rounded-xl">
+                    <img src="{{ asset('img/icon/acai.svg') }}" class  alt="localização">
+                    <span>açai</span>
+                </button>
+
+                <button class="border-2 min-w-[95px] w-full selection:bg-fuchsia-700 selection:text-white border-fuchsia-700 flex justify-center gap-2 p-2 rounded-xl">
+                    <img src="{{ asset('img/icon/calda.svg') }}" class  alt="localização">
+                    <span>calda</span>
+                </button>
+
+                <button class="border-2 min-w-[95px] w-full selection:bg-fuchsia-700 selection:text-white border-fuchsia-700 flex justify-center gap-2 p-2 rounded-xl">
+                    <img src="{{ asset('img/icon/morango.svg') }}" class  alt="localização">
+                    <span>fruta</span>
+                </button>
+
+                <button class="border-2 min-w-[95px] w-full selection:bg-fuchsia-700 selection:text-white border-fuchsia-700 flex justify-center gap-2 p-2 rounded-xl">
+                    <img src="{{ asset('img/icon/icecream.svg') }}" class  alt="localização">
+                    <span>sorvete</span>
+                </button>
+                <button class="border-2 min-w-[95px] w-full selection:bg-fuchsia-700 selection:text-white border-fuchsia-700 flex justify-center gap-2 p-2 rounded-xl">
+                    <img src="{{ asset('img/icon/candy.svg') }}" class  alt="localização">
+                    <span>doces</span>
+                </button>
+             </div>
+            </div>
+
+             <div class="options flex flex-col gap-y-10 p-6">
+                <div class="itens flex flex-col gap-6">
+                    <h1 class="text-xl font-bold">Copos</h1>
+                    <section class="itens grid grid-cols-2 sm:grid-cols-3  gap-3">
+                        <div class="item rounded-xl p-3 shadow-xl flex flex-col gap-2 justify-center items-start text-lg ">
+                            <img src="{{ asset('img/acaipequeno.png') }}" class="w-full max-w-xs"  alt="localização">
+                            <h2 class="text-xl font-bold" >Açai 330ml</h2>
+                            <p class="text-slate-500/75">Açai de 330 ml natural sem adição de corante</p>
+                            <div class="add w-full flex justify-between items-center text-fuchsia-700">
+                                <p class="text-xl">R$ 22,00</p>
+                                <button class="w-11 h-11  bg-fuchsia-700 flex justify-center items-center rounded-full text-white">
+                                    <span class="material-symbols-outlined">add</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="item rounded-xl p-3 shadow-xl flex flex-col gap-2 justify-center items-start text-lg ">
+                            <img src="{{ asset('img/acaipequeno.png') }}" class="w-full max-w-xs"  alt="localização">
+                            <h2 class="text-xl font-bold" >Açai 330ml</h2>
+                            <p class="text-slate-500/75">Açai de 330 ml natural sem adição de corante</p>
+                            <div class="add w-full flex justify-between items-center text-fuchsia-700">
+                                <p class="text-xl">R$ 22,00</p>
+                                <button class="w-11 h-11  bg-fuchsia-700 flex justify-center items-center rounded-full text-white">
+                                    <span class="material-symbols-outlined">add</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="item rounded-xl p-3 shadow-xl flex flex-col gap-2 justify-center items-start text-lg ">
+                            <img src="{{ asset('img/acaipequeno.png') }}" class="w-full max-w-xs"  alt="localização">
+                            <h2 class="text-xl font-bold" >Açai 330ml</h2>
+                            <p class="text-slate-500/75">Açai de 330 ml natural sem adição de corante</p>
+                            <div class="add w-full flex justify-between items-center text-fuchsia-700">
+                                <p class="text-xl">R$ 22,00</p>
+                                <button class="w-11 h-11  bg-fuchsia-700 flex justify-center items-center rounded-full text-white">
+                                    <span class="material-symbols-outlined">add</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="item rounded-xl p-3 shadow-xl flex flex-col gap-2 justify-center items-start text-lg ">
+                            <img src="{{ asset('img/acaipequeno.png') }}" class="w-full max-w-xs"  alt="localização">
+                            <h2 class="text-xl font-bold" >Açai 330ml</h2>
+                            <p class="text-slate-500/75">Açai de 330 ml natural sem adição de corante</p>
+                            <div class="add w-full flex justify-between items-center text-fuchsia-700">
+                                <p class="text-xl">R$ 22,00</p>
+                                <button class="w-11 h-11  bg-fuchsia-700 flex justify-center items-center rounded-full text-white">
+                                    <span class="material-symbols-outlined">add</span>
+                                </button>
+                            </div>
+                        </div>
+                     </section>
+                </div>
+                <div class="itens flex flex-col gap-6">
+                    <h1 class="text-xl font-bold">Creme</h1>
+                    <section class="itens grid grid-cols-2 sm:grid-cols-3  gap-3">
+                        <div class="item rounded-xl p-3 shadow-xl flex flex-col gap-2 justify-center items-start text-lg ">
+                            <img src="{{ asset('img/acaipequeno.png') }}" class="w-full max-w-xs"  alt="localização">
+                            <h2 class="text-xl font-bold" >Açai 330ml</h2>
+                            <p class="text-slate-500/75">Açai de 330 ml natural sem adição de corante</p>
+                            <div class="add w-full flex justify-between items-center text-fuchsia-700">
+                                <p class="text-xl">R$ 22,00</p>
+                                <button class="w-11 h-11  bg-fuchsia-700 flex justify-center items-center rounded-full text-white">
+                                    <span class="material-symbols-outlined">add</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="item rounded-xl p-3 shadow-xl flex flex-col gap-2 justify-center items-start text-lg ">
+                            <img src="{{ asset('img/acaipequeno.png') }}" class="w-full max-w-xs"  alt="localização">
+                            <h2 class="text-xl font-bold" >Açai 330ml</h2>
+                            <p class="text-slate-500/75">Açai de 330 ml natural sem adição de corante</p>
+                            <div class="add w-full flex justify-between items-center text-fuchsia-700">
+                                <p class="text-xl">R$ 22,00</p>
+                                <button class="w-11 h-11  bg-fuchsia-700 flex justify-center items-center rounded-full text-white">
+                                    <span class="material-symbols-outlined">add</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="item rounded-xl p-3 shadow-xl flex flex-col gap-2 justify-center items-start text-lg ">
+                            <img src="{{ asset('img/acaipequeno.png') }}" class="w-full max-w-xs"  alt="localização">
+                            <h2 class="text-xl font-bold" >Açai 330ml</h2>
+                            <p class="text-slate-500/75">Açai de 330 ml natural sem adição de corante</p>
+                            <div class="add w-full flex justify-between items-center text-fuchsia-700">
+                                <p class="text-xl">R$ 22,00</p>
+                                <button class="w-11 h-11  bg-fuchsia-700 flex justify-center items-center rounded-full text-white">
+                                    <span class="material-symbols-outlined">add</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="item rounded-xl p-3 shadow-xl flex flex-col gap-2 justify-center items-start text-lg ">
+                            <img src="{{ asset('img/acaipequeno.png') }}" class="w-full max-w-xs"  alt="localização">
+                            <h2 class="text-xl font-bold" >Açai 330ml</h2>
+                            <p class="text-slate-500/75">Açai de 330 ml natural sem adição de corante</p>
+                            <div class="add w-full flex justify-between items-center text-fuchsia-700">
+                                <p class="text-xl">R$ 22,00</p>
+                                <button class="w-11 h-11  bg-fuchsia-700 flex justify-center items-center rounded-full text-white">
+                                    <span class="material-symbols-outlined">add</span>
+                                </button>
+                            </div>
+                        </div>
+                     </section>
+                </div>
+                <div class="itens flex flex-col gap-6">
+                    <h1 class="text-xl font-bold">Acompanhamento</h1>
+                    <section class="itens grid grid-cols-2 sm:grid-cols-3  gap-3">
+                        <div class="item rounded-xl p-3 shadow-xl flex flex-col gap-2 justify-center items-start text-lg ">
+                            <img src="{{ asset('img/acaipequeno.png') }}" class="w-full max-w-xs"  alt="localização">
+                            <h2 class="text-xl font-bold" >Açai 330ml</h2>
+                            <p class="text-slate-500/75">Açai de 330 ml natural sem adição de corante</p>
+                            <div class="add w-full flex justify-between items-center text-fuchsia-700">
+                                <p class="text-xl">R$ 22,00</p>
+                                <button class="w-11 h-11  bg-fuchsia-700 flex justify-center items-center rounded-full text-white">
+                                    <span class="material-symbols-outlined">add</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="item rounded-xl p-3 shadow-xl flex flex-col gap-2 justify-center items-start text-lg ">
+                            <img src="{{ asset('img/acaipequeno.png') }}" class="w-full max-w-xs"  alt="localização">
+                            <h2 class="text-xl font-bold" >Açai 330ml</h2>
+                            <p class="text-slate-500/75">Açai de 330 ml natural sem adição de corante</p>
+                            <div class="add w-full flex justify-between items-center text-fuchsia-700">
+                                <p class="text-xl">R$ 22,00</p>
+                                <button class="w-11 h-11  bg-fuchsia-700 flex justify-center items-center rounded-full text-white">
+                                    <span class="material-symbols-outlined">add</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="item rounded-xl p-3 shadow-xl flex flex-col gap-2 justify-center items-start text-lg ">
+                            <img src="{{ asset('img/acaipequeno.png') }}" class="w-full max-w-xs"  alt="localização">
+                            <h2 class="text-xl font-bold" >Açai 330ml</h2>
+                            <p class="text-slate-500/75">Açai de 330 ml natural sem adição de corante</p>
+                            <div class="add w-full flex justify-between items-center text-fuchsia-700">
+                                <p class="text-xl">R$ 22,00</p>
+                                <button class="w-11 h-11  bg-fuchsia-700 flex justify-center items-center rounded-full text-white">
+                                    <span class="material-symbols-outlined">add</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="item rounded-xl p-3 shadow-xl flex flex-col gap-2 justify-center items-start text-lg ">
+                            <img src="{{ asset('img/acaipequeno.png') }}" class="w-full max-w-xs"  alt="localização">
+                            <h2 class="text-xl font-bold" >Açai 330ml</h2>
+                            <p class="text-slate-500/75">Açai de 330 ml natural sem adição de corante</p>
+                            <div class="add w-full flex justify-between items-center text-fuchsia-700">
+                                <p class="text-xl">R$ 22,00</p>
+                                <button class="w-11 h-11  bg-fuchsia-700 flex justify-center items-center rounded-full text-white">
+                                    <span class="material-symbols-outlined">add</span>
+                                </button>
+                            </div>
+                        </div>
+                     </section>
+                </div>
+             </div>
+
+
         </section>
-        <nav class="using px-7 md:px-16 grid grid-cols-4 gap-2 relative z-10 top-44">
-            <section class="status col-span-4 md:col-span-3">
-                <div class="profile rounded-xl max-h-56 flex items-center gap-4 p-6  w-full bg-white mb-10">
-                    <img src="img/logo/logo.jpg" class="max-h-40 w-3/12 md:w-2/12 h-5/12 rounded-full" alt="">
-                    <span class="status top-10 left-52">
-                        <div class="shoreName text-xl font-semibold">Açai Clube</div>
-                        <div class=" md:flex md:items-center gap-2 mt-2">
-                            <div class="flex items-center gap-x-2">
-                                <div class="bol w-3.5 h-3.5 rounded-2xl bg-purple-400"></div>
-                                <h2 class="text-purple-400 text-base">Funcionando :</h2>
-                            </div>
-                            <div class="openHours">Fecha às 23h45</div>
-                        </div>
-                    </span>
+        <section class="menulateralRight fixed right-0 top-0 w-[30.4%] h-full flex flex-col rounded-2xl bg-white col-span-3">
+            <div class="profile flex justify-between p-4 items-center shadowRounded">
+                <div class="flex items-center space-x-4">
+                    <img class="w-14 h-14 rounded-full" src="{{ asset('img/icon/profile.svg') }}" alt="">
+                    <div class="font-medium dark:text-white">
+                        <div>Yuri Gomes</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400">Email aqui</div>
+                    </div>
                 </div>
-                <section class="bodyDelivery">
-                    <div class="search w-full h-12 bg-white rounded flex items-center py-7 px-2 gap-5 ">
-                        <button class="w-11 h-11 rounded-md bg-gray-100 flex justify-center items-center p-2">
-                            <span class="material-symbols-outlined">search</span>
+                <button class="rounded-full bg-red-500 flex justify-center p-2 items-center">
+                    <img src="{{ asset('img/icon/logout.svg') }}" class="w-10/12"  alt="">
+                </button>
+            </div>
+            <div class="card flex justify-between items-center shadowRounded  gap-4 p-4 ">
+                <div class="flex justify-center items-center gap-2">
+                    <img src="{{ asset('img/icon/card.svg') }}" alt="">
+                    <div class="format">
+                        <span class="text-slate-400">Forma de pagamento</span>
+                        <p>Debito</p>
+                    </div>
+                </div>
+               <button class="Button">
+                <img src="{{ asset('img/icon/pencil.svg') }}" class="" alt="">
+               </button>
+            </div>
+            <div class="location flex justify-between items-center shadowRounded  gap-4 p-4 ">
+                <div class="format">
+                    <span class="text-slate-400">Endereço</span>
+                    <p>Rua general lott, 2341, centro</p>
+                </div>
+               <button class="Button">
+                <img src="{{ asset('img/icon/pencil.svg') }}" class="" alt="">
+               </button>
+            </div>
+            <div class="shadowRounded flex flex-col gap-4 p-4 ">
+                <span class="text-slate-400 ">Meu pedido</span>
+                <div class="orders h-36 p-4 flex flex-col justify-between gap-3 overflow-y-auto">
+                    <div class="order p-2 flex justify-center items-center gap-2 border-b-2 rounded-xl">
+                        <img src="{{ asset('img/acaimorango.png') }}" class="w-2/12" alt="">
+                        <div class="description h-full flex flex-col justify-center gap-2 break-all">
+                            <span>Açai 550ml</span>
+                            <p>creme : Leite ninho</p>
+                            <p class="">acom : confete, chocolate, morango, <b class="text-fuchsia-700">nozes</b></p>
+                        </div>
+                        <button class="remove Button p-3">
+                        <img src="{{ asset('img/icon/remove.svg') }}" class="" alt="">
                         </button>
-                        <input type="search" class=" w-full p-3 outline-none border-none" name="busca" placeholder="Buscar produtos ..." id="busca">
-                    </div>
-                    <div class="Ingredients">
-                        {{-- <div class="emphasis flex flex-col gap-y-5 mb-10 mt-10">
-                            <h1 class="font-medium text-xl text-zinc-700">Destaques </h1>
-                            <div class="itens ">
-                                    <div class="swiper w-full   destaqueDelivery">
-                                        <div class="swiper-wrapper relative right-80 w-full">
-                                          <div class="swiper-slide w-80 ">
-                                            <div class="item w-full rounded bg-white p-3 flex flex-col flex-wrap-reverse">
-                                                <div class="text col-span-2">
-                                                    <div class="prodImg col-span-2 mb-4 ">
-                                                        <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
-                                                    </div>
-                                                    <div class="titleProd text-base">titulo produto</div>
-                                                    <div class="descProd mb-16 text-sm text-gray-400">alguma descrição do produto</div>
-                                                    <div class="valueProd text-sm text-green-800 flex justify-between px-1">R$ 29,00 <input type="checkbox" class="input" name="include" id="include"></div>
-                                                </div>
-                                            </div>
-                                          </div><div class="swiper-slide w-80 ">
-                                            <div class="item w-full rounded bg-white p-3 flex flex-col flex-wrap-reverse">
-                                                <div class="text col-span-2">
-                                                    <div class="prodImg col-span-2 mb-4 ">
-                                                        <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
-                                                    </div>
-                                                    <div class="titleProd text-base">titulo produto</div>
-                                                    <div class="descProd mb-16 text-sm text-gray-400">alguma descrição do produto</div>
-                                                    <div class="valueProd text-sm text-green-800 flex justify-between px-1">R$ 29,00 <input type="checkbox" class="input" name="include" id="include"></div>
-                                                </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                    </div>
-                            </div>
-                            carrousel de itens mais pedidos
-                        </div> --}}
-                        <div class="emphasis flex flex-col gap-y-5 mb-10">
-                            <h1 class="font-medium text-xl text-zinc-700">Copos </h1>
-                            <div class="itens grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="item w-full rounded bg-white p-5 grid-flow-col md:grid grid-cols-4 grid-rows-1">
-                                    <div class="text col-span-2">
-                                        <div class="titleProd text-base">AÇAI-300ML</div>
-                                        <div class="descProd md:mb-16 text-sm text-gray-400">AÇAI + 1 CREME + 2 ACOMPANHAMENTOS GRÁTIS</div>
-                                        <div class="valueProd text-sm text-green-800 flex justify-between md:px-1">R$ 12,50 <input type="checkbox" class="input" name="include" id="include"></div>
-                                    </div>
-                                    <div class="prodImg col-span-2 ">
-                                        <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
-                                    </div>
-                                </div>
-                                <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
-                                    <div class="text col-span-2">
-                                        <div class="titleProd text-base">AÇAI-400ML</div>
-                                        <div class="descProd mb-16 text-sm text-gray-400">AÇAI + 1 CREME + 3 ACOMPANHAMENTOS GRÁTIS</div>
-                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1">R$ 14,50 <input type="checkbox" class="input" name="include" id="include"></div>
-                                    </div>
-                                    <div class="prodImg col-span-2 ">
-                                        <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
-                                    </div>
-                                </div>
-                                <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
-                                    <div class="text col-span-2">
-                                        <div class="titleProd text-base">AÇAI-500ML</div>
-                                        <div class="descProd mb-16 text-sm text-gray-400">AÇAI + 1 CREME + 4 ACOMPANHAMENTOS GRÁTIS</div>
-                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1">R$ 29,00 <input type="checkbox" class="input" name="include" id="include"></div>
-                                    </div>
-                                    <div class="prodImg col-span-2 ">
-                                        <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
-                                    </div>
-                                </div>
-
-                            </div>
-                            {{-- carrousel de itens mais pedidos --}}
-                        </div>
-                        <div class="emphasis flex flex-col gap-y-5 mb-10">
-                            <h1 class="font-medium text-xl text-zinc-700">CREMES</h1>
-                            <div class="itens grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
-                                    <div class="text col-span-2">
-                                        <div class="titleProd text-xl">CREME DE CUPUAÇU</div>
-                                        <div class="descProd mb-16 text-sm text-gray-400">alguma descrição do produto</div>
-                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1"> <input type="checkbox" class="input" name="include" id="include"></div>
-                                    </div>
-                                    <div class="prodImg col-span-2 ">
-                                        <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
-                                    </div>
-                                </div>
-                                <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
-                                    <div class="text col-span-2">
-                                        <div class="titleProd text-xl">CREME DE LEITE NINHO</div>
-                                        <div class="descProd mb-16 text-sm text-gray-400">alguma descrição do produto</div>
-                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1"> <input type="checkbox" class="input" name="include" id="include"></div>
-                                    </div>
-                                    <div class="prodImg col-span-2 ">
-                                        <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
-                                    </div>
-                                </div>
-                                <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
-                                    <div class="text col-span-2">
-                                        <div class="titleProd text-xl">CREME DE OREO</div>
-                                        <div class="descProd mb-16 text-sm text-gray-400">alguma descrição do produto</div>
-                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1"> <input type="checkbox" class="input" name="include" id="include"></div>
-                                    </div>
-                                    <div class="prodImg col-span-2 ">
-                                        <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
-                                    </div>
-                                </div>
-                                <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
-                                    <div class="text col-span-2">
-                                        <div class="titleProd text-xl">CREME DE NUTELLA</div>
-                                        <div class="descProd mb-16 text-sm text-gray-400">alguma descrição do produto</div>
-                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1"> <input type="checkbox" class="input" name="include" id="include"></div>
-                                    </div>
-                                    <div class="prodImg col-span-2 ">
-                                        <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- carrousel de itens mais pedidos --}}
-                        </div>
-                        <div class="emphasis flex flex-col gap-y-5 mb-10">
-                            <h1 class="font-medium text-xl text-zinc-700">ACOMPANHAMENTOS</h1>
-                            <div class="itens grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
-                                    <div class="text col-span-2">
-                                        <div class="titleProd text-base">M&M'S</div>
-                                        <div class="descProd mb-16 text-sm text-gray-400">alguma descrição do produto</div>
-                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1"><input type="checkbox" class="input" name="include" id="include"></div>
-                                    </div>
-                                    <div class="prodImg col-span-2 ">
-                                        <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- carrousel de itens mais pedidos --}}
-                        </div>
-                        <div class="emphasis flex flex-col gap-y-5 mb-10">
-                            <h1 class="font-medium text-xl text-zinc-700">Bebidas </h1>
-                            <div class="itens grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="item w-full rounded bg-white p-5 grid grid-cols-4 grid-rows-1">
-                                    <div class="text col-span-2">
-                                        <div class="titleProd text-base">titulo produto</div>
-                                        <div class="descProd mb-16 text-sm text-gray-400">alguma descrição do produto</div>
-                                        <div class="valueProd text-sm text-green-800 flex justify-between px-1">R$ 29,00 <input type="checkbox" class="input" name="include" id="include"></div>
-                                    </div>
-                                    <div class="prodImg col-span-2 ">
-                                        <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- carrousel de itens mais pedidos --}}
-                        </div>
                     </div>
 
-                </section>
+                </div>
+                <button class="">
+                    <img src="{{ asset('img/icon/plus.svg') }}" class="w-12 h-12" alt="">
+                </button>
+            </div>
+            <div class="total flex flex-col justify-center items-center p-4 gap-5">
+                <div class="flex justify-between items-center w-full text-xl">
+                    <p>total : </p>
+                    <p class="total text-fuchsia-700">
+                        R$18,80
+                    </p>
+                </div>
+                <button class="p-4 w-3/5 flex justify-center items-center bg-green-500 rounded-2xl">
+                    Finalizar compra
+                </button>
+            </div>
+        </section>
+        <div id="infoleft" class="overlay hidden absolute left-0 top-0  bg-slate-500/80 w-screen h-full ">
+            <button id="closeinfoleft" class=" absolute felx justify-center items-center right-10 top-4 bg-fuchsia-500 rounded-xl w-14 h-14">
+                <span class="material-symbols-outlined text-4xl">close</span>
+            </button>
+            <section class="menulateralRight fixed left-0 top-0 w-[30.4%] h-full flex flex-col rounded-2xl bg-white col-span-3">
+                <div class="profile flex justify-between p-4 items-center shadowRounded">
+                    <div class="flex items-center space-x-4">
+                        <img class="w-14 h-14 rounded-full" src="{{ asset('img/icon/profile.svg') }}" alt="">
+                        <div class="font-medium dark:text-white">
+                            <div>Yuri Gomes</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400">Email aqui</div>
+                        </div>
+                    </div>
+                    <button class="rounded-full bg-red-500 flex justify-center p-2 items-center">
+                        <img src="{{ asset('img/icon/logout.svg') }}" class="w-10/12"  alt="">
+                    </button>
+                </div>
+                <div class="editeprofile px-4">
+                    <h1 class="text-xl">Seus dados</h1>
+                    <div class=" flex flex-col gap-2 justify-center items-center">
+                        <div class="inputName flex justify-between items-center w-4/5 shadowRounded p-4 ">
+                            <div class="title">
+                                <h3 class="text-fuchsia-700">Nome</h3>
+                                <span>Yuri marcio gomes rocha</span>
+                            </div>
+                            <button class="Button">
+                                <img class=" rounded-full" src="{{ asset('img/icon/pencil.svg') }}" alt="">
+                            </button>
+                        </div>
+                        <div class="inputEmail flex justify-between items-center w-4/5 shadowRounded p-4 ">
+                            <div class="title">
+                                <h3 class="text-fuchsia-700">Email</h3>
+                                <span>Yuri marcio gomes rocha</span>
+                            </div>
+                            <button class="Button">
+                                <img class=" rounded-full" src="{{ asset('img/icon/pencil.svg') }}" alt="">
+                            </button>
+                        </div>
+                        <div class="inputTelefone flex justify-between items-center w-4/5 shadowRounded p-4 ">
+                            <div class="title">
+                                <h3 class="text-fuchsia-700">Telefone</h3>
+                                <span>Yuri marcio gomes rocha</span>
+                            </div>
+                            <button class="Button">
+                                <img class=" rounded-full" src="{{ asset('img/icon/pencil.svg') }}" alt="">
+                            </button>
+                        </div>
+                        <div class="inputEndereço flex justify-between items-center w-4/5 shadowRounded p-4 ">
+                            <div class="title">
+                                <h3 class="text-fuchsia-700">Endereço</h3>
+                                <span>Yuri marcio gomes rocha</span>
+                            </div>
+                            <button class="Button">
+                                <img class=" rounded-full" src="{{ asset('img/icon/pencil.svg') }}" alt="">
+                            </button>
+                        </div>
+                        <div class="inputCpf flex justify-between items-center w-4/5 shadowRounded p-4 ">
+                            <div class="title">
+                                <h3 class="text-fuchsia-700">Cpf</h3>
+                                <span>Yuri marcio gomes rocha</span>
+                            </div>
+                            <button class="Button">
+                                <img class=" rounded-full" src="{{ asset('img/icon/pencil.svg') }}" alt="">
+                            </button>
+                        </div>
+                        <button class="ultimosPedidos text-fuchsia-700 flex justify-between items-center w-4/5 shadowRounded p-4 ">
+                            <p>Ultimos pedidos</p>
+                        </button>
+                        <button class="faleConosco text-fuchsia-700 flex justify-between items-center w-4/5 shadowRounded p-4 ">
+                            <p>Fale Conosco</p>
+                        </button>
+                    </div>
+
+                </div>
             </section>
-            {{-- <div class="cart w-full h-full max-h-80 flex flex-col gap-y-4 max-w-xs fixed right-5">
-                caso o carrinho esteja vazio apresente
-                <div class="prodsCart  bg-white p-2 rounded-lg w-full h-full max-h-96">
-                    quando não tiver produtos no carrinho
-                    <div class="empytCart w-full h-44 flex flex-col justify-center items-center text-xl gap-y-3 text-neutral-500 invisible">
-                        <span class="material-symbols-outlined text-3xl ">production_quantity_limits</span>
-                        <span>Carrinho Vazio!</span>
-                    </div>
-                    --------------------------------
-                    <div class="headCart w-full flex justify-between items-center border-b-2 border-b-zinc-600/25 shadow-sm py-2">
-                        <div class="flex justify-center items-center gap-x-3 text-lg ">
-                            <span class="material-symbols-outlined text-lg ">production_quantity_limits</span>
-                            <p>Carrinho</p>
-                        </div>
-                        <div class="numberCart rounded-2xl bg-purple-400 w-6 h-6 flex justify-center items-center font-bold">
-                            <span>1</span>
-                        </div>
-                    </div>
-                    <div class="scrollProd  max-h-64 w-full h-full overflow-y-auto ">
-                        <div class="prodCart h-full flex flex-col gap-y-4 py-3 text-xs border-b-2 border-b-gray-400 shadow-sm ">
-                            <div class="inforProd flex justify-between items-start">
-                               <div class="div flex flex-col justify-start items-start gap-y-4">
-                                    <div class="NameProd text-base">(1x) Açai</div>
-                                    <div class="sizeProd"><b>Tamanho:</b> Medio</div>
-                                    <ul class="acomProd">
-                                        <li class="font-semibold">Acompanhamentos:</li>
-                                        <li>chocobol</li>
-                                        <li>M&M</li>
-                                        <li>Cereja</li>
-                                        <li>Leite em Pó</li>
-                                    </ul>
-                                    <div class="syrupProd "> <b class="font-semibold">Calda:</b> Morango</div>
-                               </div>
-                               <div class="priceProd px-3 py-2 bg-purple-400/20 rounded-lg text-sm">
-                                    <span>R$ 35,00</span>
-                               </div>
-                            </div>
-                            <button class="text-red-300 p-2">Remover produto</button>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="totalProd bg-white p-4 rounded-lg">
-                    <div class="total flex justify-between items-center mb-5">
-                        <span>Total</span>
-                        <span>R$35,00</span>
-                    </div>
-                    <button class="requestProd p-2 flex justify-center items-center bg-green-600 w-full rounded" value="Fazer Pedido">Fazer Pedido</button>
-                </div>
-            </div> --}}
-
-        </nav>
-    </div>
-
-
-
+        </div>
+    </section>
+</section>
 @endsection
