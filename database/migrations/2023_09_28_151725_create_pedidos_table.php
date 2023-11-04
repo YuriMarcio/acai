@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_deliveries', function (Blueprint $table) {
+        Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('status_id')->default(1); // Chave estrangeira para o status (padrão: pendente)
+
             $table->timestamps();
-            $table->char('nome',100);
-            $table->char('telefone','20');
-            $table->char('rua','100');
-            $table->char('bairro','60');
-            $table->char('numero');
-            $table->char('cidade','70');
         });
     }
 
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_deliveries');
+        Schema::dropIfExists('pedidos');
     }
 };

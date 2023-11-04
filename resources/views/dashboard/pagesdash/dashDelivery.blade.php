@@ -14,7 +14,7 @@ DELIVERY
             </div>
             <p class="text-sm text-slate-400 mb-4 flex items-center gap-x-1"><span class="material-symbols-outlined">info</span>Por aqui vc cadastra, edita e exclui itens</p>
         </div>
-        <button class="hover:bg-purple-400 rounded-full justify-center items-center transition" ><span class="material-symbols-outlined text-3xl text-red-500 ">close</span></button>
+        <button class="hover:bg-fuchsia-500 rounded-full justify-center items-center transition" ><span class="material-symbols-outlined text-3xl text-red-500 ">close</span></button>
     </div>
     <div class="bg-slate-100 flex h-[89%] flex-col overflow-y-auto gap-2 p-4 rounded-lg shadow-2xl">
         <h1 class="text-xl font-medium mb-3">Cadastar</h1>
@@ -28,10 +28,10 @@ DELIVERY
                     <input class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="numeroCreme" type="number" placeholder="Quantos cremes">
                     <input class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="number" placeholder="Quantos acompanhamentos">
                     <input class="shadow appearance-none border rounded bg-white py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="numeroAcom" type="file">
-                    <input class="shadow appearance-none bg-white border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hover:bg-purple-400 cursor-pointer" id="username" type="submit" value="Adicionar" >
+                    <input class="shadow appearance-none bg-white border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hover:bg-fuchsia-500 cursor-pointer" id="username" type="submit" value="Adicionar" >
                 </form>
             </section>
-            <section id="bancoCopos" class="itens p-4 grid grid-cols-1 md:grid-cols-3 gap-4 border border-purple-400 rounded-xl ">
+            <section id="bancoCopos" class="itens p-4 grid grid-cols-1 md:grid-cols-3 gap-4 border border-fubg-fuchsia-500 rounded-xl ">
                 <div class="item relative rounded bg-white p-5 grid-flow-col md:grid grid-cols-4 grid-rows-1">
                     <div class="text col-span-2">
                         <div class="titleProd text-base">AÇAI-300ML</div>
@@ -41,7 +41,7 @@ DELIVERY
                     <div class="prodImg col-span-2 ">
                         <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
                     </div>
-                    <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-purple-400 ">edit</span>
+                    <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-fubg-fuchsia-500 ">edit</span>
                 </div>
                 <div class="item w-full relative rounded bg-white p-5 grid-flow-col lg:grid grid-cols-4 grid-rows-1">
                     <div class="text col-span-2">
@@ -52,7 +52,7 @@ DELIVERY
                     <div class="prodImg col-span-2 ">
                         <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
                     </div>
-                    <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-purple-400 ">edit</span>
+                    <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-fubg-fuchsia-500 ">edit</span>
                 </div>
                 <div class="item w-full relative rounded bg-white p-5 grid-flow-col md:grid grid-cols-4 grid-rows-1">
                     <div class="text col-span-2">
@@ -63,7 +63,7 @@ DELIVERY
                     <div class="prodImg col-span-2 ">
                         <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
                     </div>
-                    <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-purple-400 ">edit</span>
+                    <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-fubg-fuchsia-500 ">edit</span>
                 </div>
             </section>
         </div>
@@ -76,9 +76,9 @@ DELIVERY
                     <input class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Descrição">
                     <input class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Valor">
                     <input class="shadow appearance-none border rounded py-2 px-3 bg-white text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="numeroAcom" type="file">
-                    <input class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hover:bg-purple-400 cursor-pointer bg-white" id="username" type="submit" value="Adicionar" >
+                    <input class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hover:bg-fuchsia-500 cursor-pointer bg-white" id="username" type="submit" value="Adicionar" >
                 </form>
-                <section id="bancoCopos" class="itens p-4 grid grid-cols-1 md:grid-cols-3 gap-4 border border-purple-400 rounded-xl ">
+                <section id="bancoCopos" class="itens p-4 grid grid-cols-1 md:grid-cols-3 gap-4 border border-fubg-fuchsia-500 rounded-xl ">
                     <div class="item relative rounded bg-white p-5 grid-flow-col md:grid grid-cols-4 grid-rows-1">
                         <div class="text col-span-2">
                             <div class="titleProd text-base">AÇAI-300ML</div>
@@ -88,7 +88,7 @@ DELIVERY
                         <div class="prodImg col-span-2 ">
                             <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
                         </div>
-                        <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-purple-400 ">edit</span>
+                        <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-fubg-fuchsia-500 ">edit</span>
                     </div>
                     <div class="item w-full relative rounded bg-white p-5 grid-flow-col lg:grid grid-cols-4 grid-rows-1">
                         <div class="text col-span-2">
@@ -99,7 +99,7 @@ DELIVERY
                         <div class="prodImg col-span-2 ">
                             <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
                         </div>
-                        <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-purple-400 ">edit</span>
+                        <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-fubg-fuchsia-500 ">edit</span>
                     </div>
                     <div class="item w-full relative rounded bg-white p-5 grid-flow-col md:grid grid-cols-4 grid-rows-1">
                         <div class="text col-span-2">
@@ -110,7 +110,7 @@ DELIVERY
                         <div class="prodImg col-span-2 ">
                             <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
                         </div>
-                        <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-purple-400 ">edit</span>
+                        <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-fubg-fuchsia-500 ">edit</span>
                     </div>
                 </section>
             </section>
@@ -124,10 +124,10 @@ DELIVERY
                     <input class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Descrição">
                     <input class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Valor">
                     <input class="shadow appearance-none border rounded py-2 px-3 bg-white text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="numeroAcom" type="file">
-                    <input class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hover:bg-purple-400 cursor-pointer bg-white" id="username" type="submit" value="Adicionar" >
+                    <input class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hover:bg-fuchsia-500 cursor-pointer bg-white" id="username" type="submit" value="Adicionar" >
                 </form>
             </section>
-            <section id="bancoCopos" class="itens p-4 grid grid-cols-1 md:grid-cols-3 gap-4 border border-purple-400 rounded-xl ">
+            <section id="bancoCopos" class="itens p-4 grid grid-cols-1 md:grid-cols-3 gap-4 border border-fubg-fuchsia-500 rounded-xl ">
                 <div class="item relative rounded bg-white p-5 grid-flow-col md:grid grid-cols-4 grid-rows-1">
                     <div class="text col-span-2">
                         <div class="titleProd text-base">AÇAI-300ML</div>
@@ -137,7 +137,7 @@ DELIVERY
                     <div class="prodImg col-span-2 ">
                         <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
                     </div>
-                    <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-purple-400 ">edit</span>
+                    <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-fubg-fuchsia-500 ">edit</span>
                 </div>
                 <div class="item w-full relative rounded bg-white p-5 grid-flow-col lg:grid grid-cols-4 grid-rows-1">
                     <div class="text col-span-2">
@@ -148,7 +148,7 @@ DELIVERY
                     <div class="prodImg col-span-2 ">
                         <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
                     </div>
-                    <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-purple-400 ">edit</span>
+                    <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-fubg-fuchsia-500 ">edit</span>
                 </div>
                 <div class="item w-full relative rounded bg-white p-5 grid-flow-col md:grid grid-cols-4 grid-rows-1">
                     <div class="text col-span-2">
@@ -159,7 +159,7 @@ DELIVERY
                     <div class="prodImg col-span-2 ">
                         <img src="{{ asset('img/ingredientes/castanha.jpg') }}" class="w-full h-full rounded-lg" alt="" srcset="">
                     </div>
-                    <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-purple-400 ">edit</span>
+                    <span class="material-symbols-outlined absolute top-0 right-0 text-base cursor-pointer text-fubg-fuchsia-500 ">edit</span>
                 </div>
             </section>
         </div>
@@ -171,21 +171,21 @@ DELIVERY
     </div>
     <p class="text-sm text-slate-400 mb-4 flex items-center gap-x-1"><span class="material-symbols-outlined">info</span>A aba de delivery é a onde você irá cadastrar produtos alterar e receber novos pedidos.</p>
     <section class="info w-full grid grid-cols-3 gap-2 ">
-        <div class="infoPedidos relative bg-white rounded-2xl p-2 h-full max-h-40 border-2 border-purple-400">
+        <div class="infoPedidos relative bg-white rounded-2xl p-2 h-full max-h-40 border-2 border-fubg-fuchsia-500">
             <span class="text-slate-400">total de pedidos:</span>
             <h1 class="text-xl">45</h1>
         </div>
-        <div class="infototal bg-white rounded-2xl p-4 h-full max-h-40 border-2 border-purple-400">
+        <div class="infototal bg-white rounded-2xl p-4 h-full max-h-40 border-2 border-fubg-fuchsia-500">
             <span class="text-slate-400">total dia:</span>
             <h1 class="text-xl">R$45</h1>
         </div>
-        <div class="infototal bg-white rounded-2xl flex flex-col gap-2 p-4 h-full max-h-40 border-2 border-purple-400">
+        <div class="infototal bg-white rounded-2xl flex flex-col gap-2 p-4 h-full max-h-40 border-2 border-fubg-fuchsia-500">
             <span class="text-slate-400">Configuração de delivery</span>
 
             <div class="flex">
                 <label class="relative inline-flex items-center cursor-pointer">
                     <input type="checkbox" value="" class="sr-only peer" checked>
-                    <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4  dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-purple-400"></div>
+                    <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4  dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-fuchsia-500"></div>
                 </label>
                 <span class="ml-3 text- font-medium text-gray-900 dark:text-gray-300">desligar/ligar operação</span>
             </div>
@@ -193,7 +193,7 @@ DELIVERY
     <section class="newPedidos py-4">
         <h1 class="text-lg font-semibold">Novos pedidos</h1>
         <div class="grid grid-cols-3 py-4 gap-4">
-            <div class="pedido border border-purple-400 bg-white rounded-md p-4 text-sm">
+            <div class="pedido border border-fubg-fuchsia-500 bg-white rounded-md p-4 text-sm">
                 <div class="header flex justify-between items-center ">
                     <div class="">
                         <div class="order">
@@ -236,7 +236,7 @@ DELIVERY
                     </div>
                 </div>
             </div>
-            <div class="pedido border border-purple-400 bg-white rounded-md p-4 text-sm">
+            <div class="pedido border border-fubg-fuchsia-500 bg-white rounded-md p-4 text-sm">
                 <div class="header flex justify-between items-center ">
                     <div class="">
                         <div class="order">
@@ -280,7 +280,7 @@ DELIVERY
                     </div>
                 </div>
             </div>
-            <div class="pedido border border-purple-400 bg-white rounded-md p-4 text-sm">
+            <div class="pedido border border-fubg-fuchsia-500 bg-white rounded-md p-4 text-sm">
                 <div class="header flex justify-between items-center ">
                     <div class="">
                         <div class="order">
@@ -323,7 +323,7 @@ DELIVERY
                     </div>
                 </div>
             </div>
-            <div class="pedido border border-purple-400 bg-white rounded-md p-4 text-sm">
+            <div class="pedido border border-fubg-fuchsia-500 bg-white rounded-md p-4 text-sm">
                 <div class="header flex justify-between items-center ">
                     <div class="">
                         <div class="order">
@@ -366,7 +366,7 @@ DELIVERY
                     </div>
                 </div>
             </div>
-            <div class="pedido border border-purple-400 bg-white rounded-md p-4 text-sm">
+            <div class="pedido border border-fubg-fuchsia-500 bg-white rounded-md p-4 text-sm">
                 <div class="header flex justify-between items-center ">
                     <div class="">
                         <div class="order">
@@ -416,7 +416,7 @@ DELIVERY
             <h1 class="text-lg font-semibold">Pedidos Concluídos : </h1>
             <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg">filtrar</button>
             <div class="container mx-auto p-4 absolute max-w-xs -top-4 -right-4">
-                <div class="bg-white p-4 shadow-2xl border border-purple-400 rounded">
+                <div class="bg-white p-4 shadow-2xl border border-fubg-fuchsia-500 rounded">
                   <h2 class="text-lg font-semibold mb-2">Selecione um intervalo de datas:</h2>
                   <div class="flex flex-wrap gap-4 mb-4">
                     <div class=" w-full ">
@@ -434,7 +434,7 @@ DELIVERY
             </div>
         </div>
         <div class="grid grid-cols-3 py-4 gap-4">
-            <div class="pedido border border-purple-400 bg-white rounded-md p-4 text-sm">
+            <div class="pedido border border-fubg-fuchsia-500 bg-white rounded-md p-4 text-sm">
                 <div class="header flex justify-between items-center ">
                     <div class="">
                         <div class="order">
@@ -477,7 +477,7 @@ DELIVERY
                     </div>
                 </div>
             </div>
-            <div class="pedido border border-purple-400 bg-white rounded-md p-4 text-sm">
+            <div class="pedido border border-fubg-fuchsia-500 bg-white rounded-md p-4 text-sm">
                 <div class="header flex justify-between items-center ">
                     <div class="">
                         <div class="order">
@@ -520,7 +520,7 @@ DELIVERY
                     </div>
                 </div>
             </div>
-            <div class="pedido border border-purple-400 bg-white rounded-md p-4 text-sm">
+            <div class="pedido border border-fubg-fuchsia-500 bg-white rounded-md p-4 text-sm">
                 <div class="header flex justify-between items-center ">
                     <div class="">
                         <div class="order">
@@ -563,7 +563,7 @@ DELIVERY
                     </div>
                 </div>
             </div>
-            <div class="pedido border border-purple-400 bg-white rounded-md p-4 text-sm">
+            <div class="pedido border border-fubg-fuchsia-500 bg-white rounded-md p-4 text-sm">
                 <div class="header flex justify-between items-center ">
                     <div class="">
                         <div class="order">
@@ -606,7 +606,7 @@ DELIVERY
                     </div>
                 </div>
             </div>
-            <div class="pedido border border-purple-400 bg-white rounded-md p-4 text-sm">
+            <div class="pedido border border-fubg-fuchsia-500 bg-white rounded-md p-4 text-sm">
                 <div class="header flex justify-between items-center ">
                     <div class="">
                         <div class="order">

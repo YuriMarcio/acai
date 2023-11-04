@@ -18,13 +18,10 @@ class dashEstoqueController extends Controller
                      ->orWhereHas('categoria', function($query) use ($termoPesquisa) {
                         $query->where('nome', 'like', '%' . $termoPesquisa . '%');
                     });
-            // Adicione mais colunas aqui, se necessário
             $listarProduto = $produtos->get();
         }else{
             $listarProduto = produto::all();
         }
-
-
         return view('dashboard.pagesdash.dashStorage',['listarCate'=>$listarCategorias],['listarProd'=>$listarProduto]);
     }
 
@@ -107,17 +104,8 @@ class dashEstoqueController extends Controller
         }else{
             return redirect()->route('dash.estoque')->with('error', "Produto $produto->id não encontrado");
         }
-
-
-
     }
-
-
-
     public function cadProd(Request $request){
-        // Correção: adicione os parênteses ()
-        $produtos = $request->all();
-
         $request->validate([
             'nameProd' => 'required|string|max:255',
             'descriProd' => 'nullable|string|max:450',
@@ -158,7 +146,7 @@ class dashEstoqueController extends Controller
             $produto->amountProd = $request->input('amountProd');
             $produto->unitPriceProd = $request->input('unitPriceProd');
 
-            // Salvando a imagem (conforme seu código)
+
             $requestImage = $request->file('imageProd');
             $extension = $requestImage->getClientOriginalExtension();
             $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
@@ -178,7 +166,7 @@ class dashEstoqueController extends Controller
 
     public function excluirCate($id){
         $categoria = categoria::find($id);
-
+        
         if (!$categoria) {
             return redirect()->back()->with('error', 'Categoria não encontrada');
         }

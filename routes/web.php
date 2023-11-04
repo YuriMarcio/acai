@@ -5,6 +5,7 @@ use App\Http\Controllers\dashEstoqueController;
 use App\Http\Controllers\dashPdvController;
 use App\Http\Controllers\DeliveryController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MobileDelivery;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\logAcessoMiddleware;
 
@@ -19,7 +20,20 @@ use App\Http\Middleware\logAcessoMiddleware;
 |
 */
 
-Route::get('/', [DeliveryController::class, 'delivery']);
+Route::get('/', [DeliveryController::class, 'delivery'])->name("home");
+
+Route::prefix('/')->controller(DeliveryController::class)->group(function () {
+    Route::get('/login','deliveryLogin')->name('login');
+    Route::post('/login','loginValidation')->name('login.Validation');
+    Route::get('/register','deliveryRegister')->name('deliveryRegister');
+    Route::post('/register','registerValidation')->name('register.Validation');
+    Route::get('/logout','logout')->name('logout');
+    Route::controller(MobileDelivery::class)->group(function(){
+        Route::get('/copo/{id}','productDetails')->name('delivery.prod');
+    });
+});
+
+
 
 Route::prefix('dash')->controller(LoginController::class)->group(function () {
     Route::get('/login', 'index')->name('login.index');

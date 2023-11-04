@@ -12,7 +12,7 @@ module.exports = {
             roboto: ['Roboto']
         },
         screens: {
-            'tablet': '436px',
+            'mini': '332px',
             // => @media (min-width: 640px) { ... }
           },
       },

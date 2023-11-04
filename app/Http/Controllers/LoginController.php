@@ -35,10 +35,10 @@ class LoginController extends Controller
         if(!$authenticated){
             return redirect()->route('login.index')->withErrors(['error'=>'email ou senha invalida']);
         }else{
-            session(['nome' => $authenticated->nome]);
-            session(['email' => $authenticated->email]);
-            session(['cargo' => $authenticated->cargo]);
-            session(['id' => $authenticated->id]);
+                session(['nome' => $authenticated->nome]);
+                session(['email' => $authenticated->email]);
+                session(['cargo' => $authenticated->cargo]);
+                session(['id' => $authenticated->id]);
 
             //CASO APLIQUE A LOGICA DE COOKIE MANUAL COMEÇAR POR AQUI
             // if($remember){

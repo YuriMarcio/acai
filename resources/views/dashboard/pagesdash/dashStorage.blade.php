@@ -158,13 +158,10 @@ Estoque
                         </div>
                     </div>
                 @endforeach
-                
-
-
             </div>
 
             <div class="addProduct hidden">
-                <div class=" absolute left-0 top-0 flex justify-center items-center  bg-slate-500/80 w-screen h-full ">
+                <div class=" fixed left-0 top-0 flex justify-center items-center  bg-slate-500/80 w-screen h-full ">
                     <button id="exitCadProduct"  class="exit">
                         <span class="material-symbols-outlined">close</span>
                     </button>
@@ -225,7 +222,7 @@ Estoque
                 </div>
             </div>
             <div class="tagCategories hidden">
-                <div class=" absolute left-0 top-0 flex justify-center items-center  bg-slate-500/80 w-screen h-full ">
+                <div class="w-full h-full fixed left-0 top-0 flex justify-center items-center  bg-slate-500/80">
                     <button id="exitTagCategories"  class="exit">
                         <span class="material-symbols-outlined">close</span>
                     </button>
@@ -250,10 +247,8 @@ Estoque
                                             @method('DELETE')
                                             <button type="submit" class="bg-red-400 p-2 flex justify-center items-center rounded-xl col-span-1 cursor-pointer delete-button" data-id="{{$categoria->id}}"><span class="material-symbols-outlined">delete</span></button>
                                         </form>
-
                                     </div>
                                 @endforeach
-
                             </div>
                         </div>
                     </div>

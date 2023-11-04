@@ -9,9 +9,8 @@
             <section class="loginMobile block md:hidden">
                 <img src="{{ asset('./img/backgroundlogin.jpg') }}" alt="" class="w-full object-cover object-center max-h-[29rem] absolute">
                 <div class="log md:hidden absolute bottom-0 max-h-[300px] rounded-tl-[200px] pt-10 bg-white w-full h-full flex justify-center items-center ">
-                    <form action={{ route('login.store') }}  method="post" class="w-full h-full text-3xl md:bg-white md:w-4/6 md:rounded-md flex flex-col justify-center gap-4  md:gap-y-8  p-4">
+                    <form action={{ route('login.store') }}  method="post" class="w-full h-full text-3xl md:bg-white md:w-4/6 md:rounded-md flex flex-col justify-center gap-4 md:gap-y-8 p-4">
                         @csrf
-
                         <div class="mb-16 w-full flex justify-center items-center  ">
                             <img src="{{ asset('img/logo/logo.jpg ') }}" class="max-h-40 w-40 hidden md:block md:max-h-20 md:w-20 h-full rounded-full" alt="">
                             <h1 class="block font-bold text-4xl md:hidden" >Login</h1>
@@ -37,7 +36,6 @@
                 <div class="w-full flex justify-center items-center">
                     <img src="{{ asset('img/logo/logo.jpg ') }}" class="max-h-20 w-20 h-full rounded-full" alt="">
                 </div>
-
                 @error('error')
                     <span>{{$message}}</span>
                 @enderror
